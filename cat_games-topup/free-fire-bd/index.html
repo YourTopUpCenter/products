@@ -109,46 +109,42 @@
             <button onclick="submitUID()">Submit</button>
         </div>
     </div>
-
+    
     <script>
-        let selectedElement = null;
+    let selectedElement = null;
 
-        function selectItem(element) {
-            // Unselect the previously selected item
-            if (selectedElement) {
-                selectedElement.classList.remove('selected');
-            }
-
-            // Select the new item
-            selectedElement = element;
-            selectedElement.classList.add('selected');
-
-            // Display the price
-            const price = selectedElement.getAttribute('data-price');
-            document.getElementById('priceDisplay').innerText = `Price: ${price} BDT`;
+    function selectItem(element) {
+        if (selectedElement) {
+            selectedElement.classList.remove('selected');
         }
 
-        function submitUID() {
-            const uid = document.getElementById('uid').value;
-            if (uid && selectedElement) {
-                const itemName = selectedElement.innerText;
-                const itemPrice = selectedElement.getAttribute('data-price');
-                const productName = selectedElement.getAttribute('data-product');
+        selectedElement = element;
+        selectedElement.classList.add('selected');
 
-                // Store item info and UID in localStorage
-                localStorage.setItem('checkoutItem', JSON.stringify({ 
-                    name: itemName, 
-                    price: itemPrice, 
-                    uid: uid,
-                    product: productName 
-                }));
+        const price = selectedElement.getAttribute('data-price');
+        document.getElementById('priceDisplay').innerText = `Price: ${price} BDT`;
+    }
 
-                // Navigate to the checkout page
-                window.location.href = 'https://yourtopupcenter.github.io/checkout';
-            } else {
-                alert('Please select an item and enter a UID.');
-            }
+    function submitUID() {
+        const uid = document.getElementById('uid').value;
+        if (uid && selectedElement) {
+            const itemName = selectedElement.innerText;
+            const itemPrice = selectedElement.getAttribute('data-price');
+            const productName = selectedElement.getAttribute('data-product');
+
+            localStorage.setItem('checkoutItem', JSON.stringify({
+                productName: productName,
+                itemName: itemName,
+                price: itemPrice,
+                uid: uid
+            }));
+
+            window.location.href = 'https://yourtopupcenter.github.io/checkout';
+        } else {
+            alert('Please select an item and enter a UID.');
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
