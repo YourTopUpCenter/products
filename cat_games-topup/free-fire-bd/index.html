@@ -6,29 +6,48 @@
     <title>Catalog Page</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e2f;
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         .catalog-container {
             width: 90%;
             max-width: 600px;
-            margin: 30px auto;
             padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            background: #28293e;
+            border-radius: 12px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #6ab04c;
+            margin-bottom: 30px;
         }
 
         h3 {
-            color: #555;
+            color: #a4a6b3;
+            margin-bottom: 10px;
         }
 
         .products, .items, .price-display, .uid-input {
@@ -37,41 +56,90 @@
 
         .item-list label {
             display: block;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 4px;
-            margin-bottom: 8px;
+            padding: 12px;
+            background: #2f3146;
+            border-radius: 8px;
+            margin-bottom: 12px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         .item-list label:hover {
-            background: #eaeaea;
+            background: #3b3d5a;
+            transform: translateY(-2px);
+        }
+
+        .item-list input[type="radio"] {
+            display: none;
+        }
+
+        .item-list input[type="radio"]:checked + label {
+            background: #6ab04c;
+            color: #fff;
+            transform: translateY(0);
         }
 
         .price-display {
             text-align: center;
+            margin-top: 20px;
         }
 
         #price {
             font-weight: bold;
-            color: #007BFF;
+            color: #e056fd;
+            font-size: 24px;
+        }
+
+        .uid-input input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: #2f3146;
+            color: #e0e0e0;
+            font-size: 16px;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .uid-input input:focus {
+            border: 2px solid #6ab04c;
         }
 
         button {
-            display: block;
             width: 100%;
-            padding: 10px;
-            background: #007BFF;
+            padding: 12px;
+            background: #6ab04c;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
 
         button:hover {
-            background: #0056b3;
+            background: #2ecc71;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .catalog-container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -90,18 +158,30 @@
             <div class="items">
                 <h3>Select an Item:</h3>
                 <div class="item-list">
-                    <label><input type="radio" name="item" value="Item 1" data-price="100"> Item 1</label>
-                    <label><input type="radio" name="item" value="Item 2" data-price="200"> Item 2</label>
-                    <label><input type="radio" name="item" value="Item 3" data-price="300"> Item 3</label>
-                    <label><input type="radio" name="item" value="Item 4" data-price="400"> Item 4</label>
-                    <label><input type="radio" name="item" value="Item 5" data-price="500"> Item 5</label>
-                    <label><input type="radio" name="item" value="Item 6" data-price="600"> Item 6</label>
-                    <label><input type="radio" name="item" value="Item 7" data-price="700"> Item 7</label>
-                    <label><input type="radio" name="item" value="Item 8" data-price="800"> Item 8</label>
-                    <label><input type="radio" name="item" value="Item 9" data-price="900"> Item 9</label>
-                    <label><input type="radio" name="item" value="Item 10" data-price="1000"> Item 10</label>
-                    <label><input type="radio" name="item" value="Item 11" data-price="1100"> Item 11</label>
-                    <label><input type="radio" name="item" value="Item 12" data-price="1200"> Item 12</label>
+                    <input type="radio" id="item1" name="item" value="Item 1" data-price="100">
+                    <label for="item1">Item 1</label>
+                    <input type="radio" id="item2" name="item" value="Item 2" data-price="200">
+                    <label for="item2">Item 2</label>
+                    <input type="radio" id="item3" name="item" value="Item 3" data-price="300">
+                    <label for="item3">Item 3</label>
+                    <input type="radio" id="item4" name="item" value="Item 4" data-price="400">
+                    <label for="item4">Item 4</label>
+                    <input type="radio" id="item5" name="item" value="Item 5" data-price="500">
+                    <label for="item5">Item 5</label>
+                    <input type="radio" id="item6" name="item" value="Item 6" data-price="600">
+                    <label for="item6">Item 6</label>
+                    <input type="radio" id="item7" name="item" value="Item 7" data-price="700">
+                    <label for="item7">Item 7</label>
+                    <input type="radio" id="item8" name="item" value="Item 8" data-price="800">
+                    <label for="item8">Item 8</label>
+                    <input type="radio" id="item9" name="item" value="Item 9" data-price="900">
+                    <label for="item9">Item 9</label>
+                    <input type="radio" id="item10" name="item" value="Item 10" data-price="1000">
+                    <label for="item10">Item 10</label>
+                    <input type="radio" id="item11" name="item" value="Item 11" data-price="1100">
+                    <label for="item11">Item 11</label>
+                    <input type="radio" id="item12" name="item" value="Item 12" data-price="1200">
+                    <label for="item12">Item 12</label>
                 </div>
             </div>
 
@@ -146,8 +226,8 @@
             localStorage.setItem('uid', uid);
 
             // Redirect to the checkout page
-            window.location.href = 'checkout.html';
+            window.location.href = 'https://yourtopupcenter.github.io/checkout';
         });
     </script>
 </body>
-                </html>
+                    </html>
