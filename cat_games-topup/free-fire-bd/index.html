@@ -24,7 +24,7 @@
 
         .catalog {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 20px;
         }
@@ -36,6 +36,7 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             border-radius: 10px;
+            text-align: center;
         }
 
         .catalog-item:hover {
@@ -46,6 +47,20 @@
         .catalog-item.selected {
             border-color: #007bff;
             background-color: #e7f1ff;
+        }
+
+        .catalog-item .product-name {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .catalog-item[data-product=""] .product-name::before {
+            content: "Free Fire Diamond BD";
+            display: block;
+            font-size: 1.2rem;
+            color: #ff0000;
+            margin-bottom: 10px;
         }
 
         .price-display {
@@ -85,18 +100,54 @@
         <h1>Product Catalog</h1>
         <div class="catalog">
             <!-- 12 Catalog Items -->
-            <div class="catalog-item" data-price="1000" data-product="Product 1" onclick="selectItem(this)">Item 1</div>
-            <div class="catalog-item" data-price="2000" data-product="Product 2" onclick="selectItem(this)">Item 2</div>
-            <div class="catalog-item" data-price="1500" data-product="Product 3" onclick="selectItem(this)">Item 3</div>
-            <div class="catalog-item" data-price="2500" data-product="Product 4" onclick="selectItem(this)">Item 4</div>
-            <div class="catalog-item" data-price="3000" data-product="Product 5" onclick="selectItem(this)">Item 5</div>
-            <div class="catalog-item" data-price="4000" data-product="Product 6" onclick="selectItem(this)">Item 6</div>
-            <div class="catalog-item" data-price="3500" data-product="Product 7" onclick="selectItem(this)">Item 7</div>
-            <div class="catalog-item" data-price="4500" data-product="Product 8" onclick="selectItem(this)">Item 8</div>
-            <div class="catalog-item" data-price="5000" data-product="Product 9" onclick="selectItem(this)">Item 9</div>
-            <div class="catalog-item" data-price="5500" data-product="Product 10" onclick="selectItem(this)">Item 10</div>
-            <div class="catalog-item" data-price="6000" data-product="Product 11" onclick="selectItem(this)">Item 11</div>
-            <div class="catalog-item" data-price="6500" data-product="Product 12" onclick="selectItem(this)">Item 12</div>
+            <div class="catalog-item" data-price="1000" data-product="Product 1" onclick="selectItem(this)">
+                <div class="product-name">Product 1</div>
+                Item 1
+            </div>
+            <div class="catalog-item" data-price="2000" data-product="Product 2" onclick="selectItem(this)">
+                <div class="product-name">Product 2</div>
+                Item 2
+            </div>
+            <div class="catalog-item" data-price="1500" data-product="Product 3" onclick="selectItem(this)">
+                <div class="product-name">Product 3</div>
+                Item 3
+            </div>
+            <div class="catalog-item" data-price="2500" data-product="Product 4" onclick="selectItem(this)">
+                <div class="product-name">Product 4</div>
+                Item 4
+            </div>
+            <div class="catalog-item" data-price="3000" data-product="Product 5" onclick="selectItem(this)">
+                <div class="product-name">Product 5</div>
+                Item 5
+            </div>
+            <div class="catalog-item" data-price="4000" data-product="Product 6" onclick="selectItem(this)">
+                <div class="product-name">Product 6</div>
+                Item 6
+            </div>
+            <div class="catalog-item" data-price="3500" data-product="Product 7" onclick="selectItem(this)">
+                <div class="product-name">Product 7</div>
+                Item 7
+            </div>
+            <div class="catalog-item" data-price="4500" data-product="Product 8" onclick="selectItem(this)">
+                <div class="product-name">Product 8</div>
+                Item 8
+            </div>
+            <div class="catalog-item" data-price="5000" data-product="Product 9" onclick="selectItem(this)">
+                <div class="product-name">Product 9</div>
+                Item 9
+            </div>
+            <div class="catalog-item" data-price="5500" data-product="Product 10" onclick="selectItem(this)">
+                <div class="product-name">Product 10</div>
+                Item 10
+            </div>
+            <div class="catalog-item" data-price="6000" data-product="Product 11" onclick="selectItem(this)">
+                <div class="product-name">Product 11</div>
+                Item 11
+            </div>
+            <div class="catalog-item" data-price="6500" data-product="Product 12" onclick="selectItem(this)">
+                <div class="product-name">Product 12</div>
+                Item 12
+            </div>
         </div>
         <!-- Price Display -->
         <div class="price-display" id="priceDisplay">Select an item to see the price</div>
@@ -122,7 +173,14 @@
         selectedElement.classList.add('selected');
 
         const price = selectedElement.getAttribute('data-price');
+        const productName = selectedElement.getAttribute('data-product');
         document.getElementById('priceDisplay').innerText = `Price: ${price} BDT`;
+
+        // Ensure Product Name is always defined
+        if (!productName) {
+            selectedElement.setAttribute('data-product', 'Free Fire Diamond BD');
+            selectedElement.querySelector('.product-name').innerText = 'Free Fire Diamond BD';
+        }
     }
 
     function submitUID() {
@@ -144,7 +202,7 @@
             alert('Please select an item and enter a UID.');
         }
     }
-</script>
+    </script>
 
 </body>
 </html>
