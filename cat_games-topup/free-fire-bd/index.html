@@ -3,206 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Catalog</title>
+    <title>Catalog Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
 
         .catalog-container {
-            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            margin: 30px auto;
             padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .catalog {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .catalog-item {
-            background-color: #fff;
-            border: 2px solid #ddd;
-            padding: 20px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-radius: 10px;
             text-align: center;
-        }
-
-        .catalog-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .catalog-item.selected {
-            border-color: #007bff;
-            background-color: #e7f1ff;
-        }
-
-        .catalog-item .product-name {
-            font-size: 1.2rem;
             color: #333;
-            margin-bottom: 10px;
         }
 
-        .catalog-item[data-product=""] .product-name::before {
-            content: "Free Fire Diamond BD";
+        h3 {
+            color: #555;
+        }
+
+        .products, .items, .price-display, .uid-input {
+            margin-bottom: 20px;
+        }
+
+        .item-list label {
             display: block;
-            font-size: 1.2rem;
-            color: #ff0000;
-            margin-bottom: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .item-list label:hover {
+            background: #eaeaea;
         }
 
         .price-display {
-            font-size: 20px;
-            color: #007bff;
-            margin-top: 10px;
-            margin-bottom: 20px;
+            text-align: center;
         }
 
-        .uid-input input {
-            width: 50%;
+        #price {
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        button {
+            display: block;
+            width: 100%;
             padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        .submit-button button {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007bff;
+            background: #007BFF;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-size: 16px;
         }
 
-        .submit-button button:hover {
-            background-color: #0056b3;
+        button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
 <body>
     <div class="catalog-container">
-        <h1>Product Catalog</h1>
-        <div class="catalog">
-            <!-- 12 Catalog Items -->
-            <div class="catalog-item" data-price="1000" data-product="Product 1" onclick="selectItem(this)">
-                <div class="product-name">Product 1</div>
-                Item 1
+        <h1>Select Your Product</h1>
+        <form id="catalog-form" action="checkout.html" method="POST">
+            <div class="products">
+                <label>Product: 
+                    <select id="product-name" name="product_name">
+                        <option value="Product A">Product A</option>
+                        <option value="Product B">Product B</option>
+                        <option value="Product C">Product C</option>
+                    </select>
+                </label>
             </div>
-            <div class="catalog-item" data-price="2000" data-product="Product 2" onclick="selectItem(this)">
-                <div class="product-name">Product 2</div>
-                Item 2
+
+            <div class="items">
+                <h3>Select an Item:</h3>
+                <div class="item-list">
+                    <label><input type="radio" name="item" value="Item 1" data-price="100"> Item 1</label>
+                    <label><input type="radio" name="item" value="Item 2" data-price="200"> Item 2</label>
+                    <label><input type="radio" name="item" value="Item 3" data-price="300"> Item 3</label>
+                    <label><input type="radio" name="item" value="Item 4" data-price="400"> Item 4</label>
+                    <label><input type="radio" name="item" value="Item 5" data-price="500"> Item 5</label>
+                    <label><input type="radio" name="item" value="Item 6" data-price="600"> Item 6</label>
+                    <label><input type="radio" name="item" value="Item 7" data-price="700"> Item 7</label>
+                    <label><input type="radio" name="item" value="Item 8" data-price="800"> Item 8</label>
+                    <label><input type="radio" name="item" value="Item 9" data-price="900"> Item 9</label>
+                    <label><input type="radio" name="item" value="Item 10" data-price="1000"> Item 10</label>
+                    <label><input type="radio" name="item" value="Item 11" data-price="1100"> Item 11</label>
+                    <label><input type="radio" name="item" value="Item 12" data-price="1200"> Item 12</label>
+                </div>
             </div>
-            <div class="catalog-item" data-price="1500" data-product="Product 3" onclick="selectItem(this)">
-                <div class="product-name">Product 3</div>
-                Item 3
+
+            <div class="price-display">
+                <h4>Selected Item Price: <span id="price">0</span></h4>
             </div>
-            <div class="catalog-item" data-price="2500" data-product="Product 4" onclick="selectItem(this)">
-                <div class="product-name">Product 4</div>
-                Item 4
+
+            <div class="uid-input">
+                <label for="uid">Enter UID: </label>
+                <input type="text" id="uid" name="uid" required>
             </div>
-            <div class="catalog-item" data-price="3000" data-product="Product 5" onclick="selectItem(this)">
-                <div class="product-name">Product 5</div>
-                Item 5
-            </div>
-            <div class="catalog-item" data-price="4000" data-product="Product 6" onclick="selectItem(this)">
-                <div class="product-name">Product 6</div>
-                Item 6
-            </div>
-            <div class="catalog-item" data-price="3500" data-product="Product 7" onclick="selectItem(this)">
-                <div class="product-name">Product 7</div>
-                Item 7
-            </div>
-            <div class="catalog-item" data-price="4500" data-product="Product 8" onclick="selectItem(this)">
-                <div class="product-name">Product 8</div>
-                Item 8
-            </div>
-            <div class="catalog-item" data-price="5000" data-product="Product 9" onclick="selectItem(this)">
-                <div class="product-name">Product 9</div>
-                Item 9
-            </div>
-            <div class="catalog-item" data-price="5500" data-product="Product 10" onclick="selectItem(this)">
-                <div class="product-name">Product 10</div>
-                Item 10
-            </div>
-            <div class="catalog-item" data-price="6000" data-product="Product 11" onclick="selectItem(this)">
-                <div class="product-name">Product 11</div>
-                Item 11
-            </div>
-            <div class="catalog-item" data-price="6500" data-product="Product 12" onclick="selectItem(this)">
-                <div class="product-name">Product 12</div>
-                Item 12
-            </div>
-        </div>
-        <!-- Price Display -->
-        <div class="price-display" id="priceDisplay">Select an item to see the price</div>
-        <!-- UID Input Box -->
-        <div class="uid-input">
-            <input type="text" id="uid" placeholder="Enter UID">
-        </div>
-        <!-- Submit Button -->
-        <div class="submit-button">
-            <button onclick="submitUID()">Submit</button>
-        </div>
+
+            <button type="submit">Checkout</button>
+        </form>
     </div>
-    
+
     <script>
-    let selectedElement = null;
+        const items = document.querySelectorAll('input[name="item"]');
+        const priceDisplay = document.getElementById('price');
 
-    function selectItem(element) {
-        if (selectedElement) {
-            selectedElement.classList.remove('selected');
-        }
+        items.forEach(item => {
+            item.addEventListener('change', function() {
+                if (this.checked) {
+                    priceDisplay.textContent = this.getAttribute('data-price');
+                }
+            });
+        });
 
-        selectedElement = element;
-        selectedElement.classList.add('selected');
+        document.getElementById('catalog-form').addEventListener('submit', function(e) {
+            e.preventDefault();
 
-        const price = selectedElement.getAttribute('data-price');
-        const productName = selectedElement.getAttribute('data-product');
-        document.getElementById('priceDisplay').innerText = `Price: ${price} BDT`;
+            const selectedProductName = document.getElementById('product-name').value;
+            const selectedItem = document.querySelector('input[name="item"]:checked');
+            const selectedItemName = selectedItem ? selectedItem.value : '';
+            const selectedPrice = selectedItem ? selectedItem.getAttribute('data-price') : '';
+            const uid = document.getElementById('uid').value;
 
-        // Ensure Product Name is always defined
-        if (!productName) {
-            selectedElement.setAttribute('data-product', 'Free Fire Diamond BD');
-            selectedElement.querySelector('.product-name').innerText = 'Free Fire Diamond BD';
-        }
-    }
+            // Store data in localStorage (you can use sessionStorage as well)
+            localStorage.setItem('productName', selectedProductName);
+            localStorage.setItem('itemName', selectedItemName);
+            localStorage.setItem('price', selectedPrice);
+            localStorage.setItem('uid', uid);
 
-    function submitUID() {
-        const uid = document.getElementById('uid').value;
-        if (uid && selectedElement) {
-            const itemName = selectedElement.innerText;
-            const itemPrice = selectedElement.getAttribute('data-price');
-            const productName = selectedElement.getAttribute('data-product');
-
-            localStorage.setItem('checkoutItem', JSON.stringify({
-                productName: productName,
-                itemName: itemName,
-                price: itemPrice,
-                uid: uid
-            }));
-
+            // Redirect to the checkout page
             window.location.href = 'https://yourtopupcenter.github.io/checkout';
-        } else {
-            alert('Please select an item and enter a UID.');
-        }
-    }
+        });
     </script>
-
 </body>
 </html>
