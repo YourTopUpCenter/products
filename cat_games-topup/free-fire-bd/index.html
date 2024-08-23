@@ -85,18 +85,18 @@
         <h1>Product Catalog</h1>
         <div class="catalog">
             <!-- 12 Catalog Items -->
-            <div class="catalog-item" data-price="1000" onclick="selectItem(this)">Item 1</div>
-            <div class="catalog-item" data-price="2000" onclick="selectItem(this)">Item 2</div>
-            <div class="catalog-item" data-price="1500" onclick="selectItem(this)">Item 3</div>
-            <div class="catalog-item" data-price="2500" onclick="selectItem(this)">Item 4</div>
-            <div class="catalog-item" data-price="3000" onclick="selectItem(this)">Item 5</div>
-            <div class="catalog-item" data-price="4000" onclick="selectItem(this)">Item 6</div>
-            <div class="catalog-item" data-price="3500" onclick="selectItem(this)">Item 7</div>
-            <div class="catalog-item" data-price="4500" onclick="selectItem(this)">Item 8</div>
-            <div class="catalog-item" data-price="5000" onclick="selectItem(this)">Item 9</div>
-            <div class="catalog-item" data-price="5500" onclick="selectItem(this)">Item 10</div>
-            <div class="catalog-item" data-price="6000" onclick="selectItem(this)">Item 11</div>
-            <div class="catalog-item" data-price="6500" onclick="selectItem(this)">Item 12</div>
+            <div class="catalog-item" data-price="1000" data-product="Product 1" onclick="selectItem(this)">Item 1</div>
+            <div class="catalog-item" data-price="2000" data-product="Product 2" onclick="selectItem(this)">Item 2</div>
+            <div class="catalog-item" data-price="1500" data-product="Product 3" onclick="selectItem(this)">Item 3</div>
+            <div class="catalog-item" data-price="2500" data-product="Product 4" onclick="selectItem(this)">Item 4</div>
+            <div class="catalog-item" data-price="3000" data-product="Product 5" onclick="selectItem(this)">Item 5</div>
+            <div class="catalog-item" data-price="4000" data-product="Product 6" onclick="selectItem(this)">Item 6</div>
+            <div class="catalog-item" data-price="3500" data-product="Product 7" onclick="selectItem(this)">Item 7</div>
+            <div class="catalog-item" data-price="4500" data-product="Product 8" onclick="selectItem(this)">Item 8</div>
+            <div class="catalog-item" data-price="5000" data-product="Product 9" onclick="selectItem(this)">Item 9</div>
+            <div class="catalog-item" data-price="5500" data-product="Product 10" onclick="selectItem(this)">Item 10</div>
+            <div class="catalog-item" data-price="6000" data-product="Product 11" onclick="selectItem(this)">Item 11</div>
+            <div class="catalog-item" data-price="6500" data-product="Product 12" onclick="selectItem(this)">Item 12</div>
         </div>
         <!-- Price Display -->
         <div class="price-display" id="priceDisplay">Select an item to see the price</div>
@@ -133,9 +133,15 @@
             if (uid && selectedElement) {
                 const itemName = selectedElement.innerText;
                 const itemPrice = selectedElement.getAttribute('data-price');
-                
+                const productName = selectedElement.getAttribute('data-product');
+
                 // Store item info and UID in localStorage
-                localStorage.setItem('checkoutItem', JSON.stringify({ name: itemName, price: itemPrice, uid: uid }));
+                localStorage.setItem('checkoutItem', JSON.stringify({ 
+                    name: itemName, 
+                    price: itemPrice, 
+                    uid: uid,
+                    product: productName 
+                }));
 
                 // Navigate to the checkout page
                 window.location.href = 'https://yourtopupcenter.github.io/checkout';
@@ -145,4 +151,4 @@
         }
     </script>
 </body>
-  </html>
+</html>
