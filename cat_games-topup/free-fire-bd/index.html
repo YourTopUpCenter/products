@@ -1,253 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalog Page</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0f172a;
-            color: #f1f5f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .catalog-container {
-            width: 90%;
-            max-width: 600px;
-            padding: 20px;
-            background: #1e293b;
-            border-radius: 15px;
-            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1 {
-            text-align: center;
-            color: #38bdf8;
-            margin-bottom: 30px;
-        }
-
-        h3 {
-            color: #94a3b8;
-            margin-bottom: 10px;
-        }
-
-        .products, .items, .price-display, .uid-input {
-            margin-bottom: 20px;
-        }
-
-        .item-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-        .item-list label {
-            position: relative;
-            padding: 20px;
-            background: #334155;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #f8fafc;
-            font-size: 16px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .item-list label:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .item-list input[type="radio"] {
-            display: none;
-        }
-
-        .item-list input[type="radio"]:checked + label {
-            background: #38bdf8;
-            color: #0f172a;
-            font-weight: bold;
-            transform: translateY(0);
-            box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.7);
-        }
-
-        .price-display {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #price {
-            font-weight: bold;
-            color: #fbbf24;
-            font-size: 24px;
-        }
-
-        .uid-input input {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: #334155;
-            color: #f1f5f9;
-            font-size: 16px;
-            outline: none;
-            transition: border 0.3s ease;
-        }
-
-        .uid-input input:focus {
-            border: 2px solid #38bdf8;
-        }
-
-        button {
-            width: 100%;
-            padding: 14px;
-            background: #38bdf8;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background 0.3s ease, transform 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        button:hover {
-            background: #0ea5e9;
-            transform: translateY(-3px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-            .item-list {
-                grid-template-columns: 1fr;
-            }
-
-            .catalog-container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            button {
-                font-size: 16px;
-                padding: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="catalog-container">
-        <h1>Select Your Product</h1>
-        <form id="catalog-form" action="checkout.html" method="POST">
-            <div class="products">
-                <label>Product: 
-                    <select id="product-name" name="product_name">
-                        <option value="Garena Free Fire Bangladesh">Garena Free Fire Bangladesh</option>
-                    </select>
-                </label>
-            </div>
-
-            <div class="items">
-                <h3>Select an Item:</h3>
-                <div class="item-list">
-                    <input type="radio" id="item1" name="item" value="Item 1" data-price="100">
-                    <label for="item1">Item 1</label>
-                    <input type="radio" id="item2" name="item" value="Item 2" data-price="200">
-                    <label for="item2">Item 2</label>
-                    <input type="radio" id="item3" name="item" value="Item 3" data-price="300">
-                    <label for="item3">Item 3</label>
-                    <input type="radio" id="item4" name="item" value="Item 4" data-price="400">
-                    <label for="item4">Item 4</label>
-                    <input type="radio" id="item5" name="item" value="Item 5" data-price="500">
-                    <label for="item5">Item 5</label>
-                    <input type="radio" id="item6" name="item" value="Item 6" data-price="600">
-                    <label for="item6">Item 6</label>
-                    <input type="radio" id="item7" name="item" value="Item 7" data-price="700">
-                    <label for="item7">Item 7</label>
-                    <input type="radio" id="item8" name="item" value="Item 8" data-price="800">
-                    <label for="item8">Item 8</label>
-                    <input type="radio" id="item9" name="item" value="Item 9" data-price="900">
-                    <label for="item9">Item 9</label>
-                    <input type="radio" id="item10" name="item" value="Item 10" data-price="1000">
-                    <label for="item10">Item 10</label>
-                    <input type="radio" id="item11" name="item" value="Item 11" data-price="1100">
-                    <label for="item11">Item 11</label>
-                    <input type="radio" id="item12" name="item" value="Item 12" data-price="1200">
-                    <label for="item12">Item 12</label>
-                </div>
-            </div>
-
-            <div class="price-display">
-                <h4>Selected Item Price: <span id="price">0</span></h4>
-            </div>
-
-            <div class="uid-input">
-                <label for="uid">Enter UID: </label>
-                <input type="text" id="uid" name="uid" required>
-            </div>
-
-            <button type="submit">Checkout</button>
-        </form>
-    </div>
-
-    <script>
-        const items = document.querySelectorAll('input[name="item"]');
-        const priceDisplay = document.getElementById('price');
-
-        items.forEach(item => {
-            item.addEventListener('change', function() {
-                if (this.checked) {
-                    priceDisplay.textContent = this.getAttribute('data-price');
-                }
-            });
-        });
-
-        document.getElementById('catalog-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const selectedProductName = document.getElementById('product-name').value;
-            const selectedItem = document.querySelector('input[name="item"]:checked');
-            const selectedItemName = selectedItem ? selectedItem.value : '';
-            const selectedPrice = selectedItem ? selectedItem.getAttribute('data-price') : '';
-            const uid = document.getElementById('uid').value;
-
-            // Store data in localStorage (you can use sessionStorage as well)
-            localStorage.setItem('productName', selectedProductName);
-            localStorage.setItem('itemName', selectedItemName);
-            localStorage.setItem('price', selectedPrice);
-            localStorage.setItem('uid', uid);
-
-            // Redirect to the checkout page
-            window.location.href = 'https://yourtopupcenter.github.io/checkout';
-        });
-    </script>
-</body>
-</html>
+<input type="radio" id="item1" name="item" value="25 Diamond" data-price="100">
+                    <label for="item1">25 Diamond</label>
+                    <input type="radio" id="item2" name="item" value="50 Diamond" data-price="200">
+                    <label for="item2">50 Diamond</label>
+                    <input type="radio" id="item3" name="item" value="115 Diamond" data-price="300">
+                    <label for="item3">115 Diamond</label>
+                    <input type="radio" id="item4" name="item" value="240 Diamond" data-price="400">
+                    <label for="item4">240 Diamond</label>
+                    <input type="radio" id="item5" name="item" value="355 Diamond" data-price="500">
+                    <label for="item5">355 Diamond</label>
+                    <input type="radio" id="item6" name="item" value="480 Diamond" data-price="600">
+                    <label for="item6">480 Diamond</label>
+                    <input type="radio" id="item7" name="item" value="505 Diamond" data-price="700">
+                    <label for="item7">505 Diamond</label>
+                    <input type="radio" id="item8" name="item" value="610 Diamond" data-price="800">
+                    <label for="item8">610 Diamond</label>
+                    <input type="radio" id="item9" name="item" value="725 Diamond" data-price="900">
+                    <label for="item9">725 Diamond</label>
+                    <input type="radio" id="item10" name="item" value="1240 Diamond" data-price="1000">
+                    <label for="item10">1240 Diamond</label>
+                    <input type="radio" id="item11" name="item" value="2530 Diamond" data-price="1100">
+                    <label for="item11">2530 Diamond</label>
+                    <input type="radio" id="item12" name="item" value="5060 Diamond" data-price="1200">
+                    <label for="item12">5060 Diamond</label>
+                    <input type="radio" id="item13" name="item" value="7590 Diamond" data-price="1300">
+                    <label for="item13">7590 Diamond</label>
+                    <input type="radio" id="item14" name="item" value="10120 Diamond" data-price="1400">
+                    <label for="item14">10120 Diamond</label>
+                    <input type="radio" id="item15" name="item" value="12650 Diamond" data-price="1500">
+                    <label for="item15">12650 Diamond</label>
+                    <input type="radio" id="item16" name="item" value="Evo Access 3days" data-price="1600">
+                    <label for="item16">Evo Access 3days</label>
+                    <input type="radio" id="item17" name="item" value="Evo Access 7days" data-price="1700">
+                    <label for="item17">Evo Access 7days</label>
+                    <input type="radio" id="item18" name="item" value="Evo Access 30days" data-price="1800">
+                    <label for="item18">Evo Access 30days</label>
+                    <input type="radio" id="item19" name="item" value="Weekly Membership" data-price="1900">
+                    <label for="item19">Weekly Membership</label>
+                    <input type="radio" id="item20" name="item" value="Weekly Lite Membership" data-price="2000">
+                    <label for="item20">Weekly Lite Membership</label>
+                    <input type="radio" id="item21" name="item" value="Monthly Membership" data-price="2100">
+                    <label for="item21">Monthly Membership</label>
+                    <input type="radio" id="item22" name="item" value="Level Up Pass" data-price="2200">
+                    <label for="item22">Level Up Pass</label>
