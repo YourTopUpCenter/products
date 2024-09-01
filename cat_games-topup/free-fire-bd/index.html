@@ -795,7 +795,7 @@ nav img {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            
             
             
         }
@@ -870,11 +870,12 @@ nav img {
         }
 
         .item-list input[type="radio"]:checked + label {
-            background: #50ff00;
-            color: #0f172a;
+            background: #50ff0043;
+            color: #fff;
             font-weight: bold;
             transform: translateY(0);
             box-shadow: 0px 0px 15px #50ff00;
+            border: 2px solid #50ff00;
         }
 
         .price-display {
@@ -930,7 +931,7 @@ nav img {
 
         @media (max-width: 768px) {
             .item-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .catalog-container {
@@ -1392,4 +1393,4 @@ function goBack() {
 
 
 </body>
-  </html>
+    </html>
