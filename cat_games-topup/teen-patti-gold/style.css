@@ -5,6 +5,15 @@
             box-sizing: border-box;
             font-family: "Cabin", sans-serif;
         }
+        
+         @media(max-width: 600px){
+           .item-list label{
+               padding: 15px;
+               border-radius: 9px;
+               font-size: 14px;
+           }
+        }
+        
         body{
     margin: 0 auto;
     
@@ -24,7 +33,8 @@
     }
 }
         
-    
+   
+        
     
     /* Footer */
 
@@ -51,6 +61,8 @@
             text-align: center;
             animation: fadeIn 1.5s ease-in-out;
         }
+
+
 
         .footer-section {
             width: 100%;
