@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Changed Title for the Teen Patti Gold Product Page -->
+    <title>Teen Patti Gold চিপস কিনুন - Your TopUp Center</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- SEO Keywords and Description -->
+    <meta name="description" content="Your TopUp Center থেকে প্লেয়ার আইডি দিয়ে নিরাপদে Teen Patti Gold চিপস/কয়েন কিনুন। সেরা দামে দ্রুততম সময়ে টপ-আপ পান। বাংলাদেশ থেকে টিন পট্টি গোল্ড টপ-আপ।">
+    <meta name="keywords" content="teen patti gold, tpg chips, teen patti gold coins, buy tpg chips bd, player id top up, tpg bangladesh, টিন পট্টি গোল্ড, টিপিজি চিপস, চিপস কিনুন">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Global Styles & Variables --- */
+        :root {
+            --primary-color: #006eff;
+            --secondary-color: #5a6a7e;
+            --success-color: #20c997;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107; /* Using warning color for chips/coins */
+            --info-color: #17a2b8;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --white-color: #ffffff;
+            --body-font: 'Mina', sans-serif;
+            --heading-font: 'Mina', sans-serif;
+            --transition-speed: 0.3s ease;
+            --border-radius: 8px;
+            --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.06);
+            --box-shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body {
+            font-family: var(--body-font);
+            line-height: 1.7;
+            color: var(--dark-color);
+            background-color: #fdfdfd;
+            overflow-x: hidden;
+            min-height: 150vh; /* Ensure scroll */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--heading-font);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+        a { text-decoration: none; color: var(--primary-color); transition: color var(--transition-speed); }
+        a:hover { color: #004bbd; }
+        ul { list-style: none; padding-left: 0; }
+        img { max-width: 100%; height: auto; display: block; border-radius: var(--border-radius); }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+        section { padding: 70px 0; position: relative; overflow: hidden; }
+        #tpg-product-page { padding-top: 40px; }
+
+        /* --- Floating Elements CSS --- */
+        .support-widget { position: fixed; bottom: 30px; right: 30px; z-index: 1010; display: flex; flex-direction: column; align-items: center; }
+        .support-main-btn { width: 65px; height: 65px; background-image: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%); color: var(--white-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.9rem; cursor: pointer; box-shadow: 0 6px 18px rgba(0, 110, 255, 0.4); transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow var(--transition-speed); z-index: 1011; border: 3px solid var(--white-color); position: relative; overflow: hidden; animation: pulse 2.5s infinite ease-in-out; }
+        .support-main-btn:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0, 110, 255, 0.5); animation-play-state: paused; }
+        .support-main-btn i { position: absolute; transition: transform 0.4s ease-out, opacity 0.3s ease-out; }
+        .support-main-btn .fa-headset { transform: rotate(0deg) scale(1); opacity: 1; }
+        .support-main-btn .fa-times { transform: rotate(-90deg) scale(0.8); opacity: 0; }
+        .support-main-btn.active .fa-headset { transform: rotate(90deg) scale(0.8); opacity: 0; }
+        .support-main-btn.active .fa-times { transform: rotate(0deg) scale(1); opacity: 1; }
+        @keyframes pulse { 0% { box-shadow: 0 6px 18px rgba(0, 110, 255, 0.4), 0 0 0 0 rgba(0, 110, 255, 0.4); } 70% { box-shadow: 0 6px 18px rgba(0, 110, 255, 0.4), 0 0 0 10px rgba(0, 110, 255, 0); } 100% { box-shadow: 0 6px 18px rgba(0, 110, 255, 0.4), 0 0 0 0 rgba(0, 110, 255, 0); } }
+        .support-options { position: absolute; bottom: 80px; right: 7.5px; display: flex; flex-direction: column; gap: 15px; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-out, visibility 0.3s ease-out; pointer-events: none; }
+        .support-options.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .support-options.active .support-option { opacity: 1; transform: translateY(0) scale(1); visibility: visible; }
+        .support-option { width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; color: var(--white-color); box-shadow: var(--box-shadow-medium); text-decoration: none; position: relative; opacity: 0; transform: translateY(15px) scale(0.8); visibility: hidden; transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.3s ease-out, visibility 0.3s ease-out, box-shadow var(--transition-speed), background-color var(--transition-speed); }
+        .support-options.active .support-option:nth-child(1) { transition-delay: 0.25s; } .support-options.active .support-option:nth-child(2) { transition-delay: 0.2s; } .support-options.active .support-option:nth-child(3) { transition-delay: 0.15s; } .support-options.active .support-option:nth-child(4) { transition-delay: 0.1s; }
+        .support-option:hover { transform: scale(1.18) rotate(5deg); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25); }
+        .support-option::before { content: attr(data-tooltip); position: absolute; right: 110%; top: 50%; transform: translateY(-50%) scale(0.8); background-color: rgba(44, 62, 80, 0.9); color: var(--white-color); padding: 5px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: 500; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity var(--transition-speed), transform var(--transition-speed); pointer-events: none; }
+        .support-option:hover::before { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); }
+        .support-option.whatsapp { background-color: #25D366; } .support-option.messenger { background-color: #0084FF; } .support-option.call { background-color: var(--danger-color); } .support-option.telegram { background-color: #2AABEE; }
+        .fixed-ad-banner { position: fixed; bottom: 25px; left: -400px; background: linear-gradient(135deg, rgba(44, 62, 80, 0.92), rgba(52, 73, 94, 0.95)); backdrop-filter: blur(6px); color: var(--white-color); padding: 12px 45px 12px 20px; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--box-shadow-medium); z-index: 999; max-width: 320px; font-size: 0.9rem; opacity: 1; animation: slideInAd 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) 1.5s forwards; transition: opacity 0.5s ease, transform 0.5s ease; }
+        .fixed-ad-banner.hidden { opacity: 0; transform: translateX(-110%); pointer-events: none; }
+        @keyframes slideInAd { from { left: -400px; } to { left: 0; } }
+        .ad-content { display: flex; align-items: center; gap: 10px; line-height: 1.5; }
+        .ad-content i { font-size: 1.5rem; color: var(--warning-color); flex-shrink: 0; }
+        .ad-content a { color: var(--warning-color); font-weight: 600; text-decoration: underline; }
+        .ad-close-btn { position: absolute; top: 5px; right: 5px; background: none; border: none; color: rgba(255, 255, 255, 0.6); font-size: 1.3rem; cursor: pointer; padding: 5px; line-height: 1; transition: color var(--transition-speed), transform var(--transition-speed); }
+        .ad-close-btn:hover { color: var(--white-color); transform: rotate(90deg); }
+
+        /* --- Header Styles --- */
+        #main-header { background-color: rgba(255, 255, 255, 0.97); backdrop-filter: blur(8px); box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); padding: 12px 0; position: sticky; top: 0; z-index: 1000; transition: background-color var(--transition-speed), padding var(--transition-speed); }
+        body.scrolled #main-header { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); }
+        #main-header .container { max-width: 1100px; display: flex; justify-content: space-between; align-items: center; }
+        .logo a { font-size: 1.9rem; font-weight: 700; color: var(--primary-color); display: flex; align-items: center; transition: transform var(--transition-speed); }
+        .logo a:hover { transform: scale(1.03); }
+        .logo a i { margin-right: 10px; color: var(--success-color); font-size: 1.5rem; animation: rotateIcon 5s linear infinite; }
+        #main-nav { display: none; }
+        #main-nav ul { display: flex; flex-wrap: wrap; }
+        #main-nav ul li { margin-left: 25px; }
+        #main-nav ul li a { color: var(--dark-color); font-weight: 600; padding: 8px 0; position: relative; transition: color var(--transition-speed); letter-spacing: 0.3px; }
+        #main-nav ul li a.active { color: var(--primary-color); font-weight: 700; }
+        #main-nav ul li a.active::after, #main-nav ul li a:hover::after { content: ''; position: absolute; width: 100%; height: 3px; display: block; margin-top: 6px; left: 0; background: var(--primary-color); transition: width 0.4s ease-out, left 0.4s ease-out; border-radius: 2px; }
+        #main-nav ul li a::after { content: ''; position: absolute; width: 0; height: 3px; display: block; margin-top: 6px; right: 0; background: var(--primary-color); transition: width 0.4s ease-out, left 0.4s ease-out; border-radius: 2px; }
+        #main-nav ul li a:hover { color: var(--primary-color); }
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: var(--dark-color); transition: color var(--transition-speed); background: none; border: none; padding: 5px;}
+        .menu-toggle:hover { color: var(--primary-color); }
+
+        /* --- TPG Page Specific Styles --- */
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.4rem; font-weight: 700; color: #333; position: relative; padding-bottom: 20px; }
+        .section-title i { color: var(--primary-color); margin-right: 10px; font-size: 2rem; vertical-align: middle; }
+        .section-title::after { content: ''; position: absolute; display: block; width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--info-color)); bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 2px; }
+        .btn { display: inline-block; padding: 12px 30px; background-image: linear-gradient(45deg, var(--primary-color) 0%, #007bff 100%); color: var(--white-color); border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all var(--transition-speed); box-shadow: 0 5px 15px rgba(0, 110, 255, 0.3); text-transform: uppercase; letter-spacing: 0.5px; }
+        .btn:hover { background-image: linear-gradient(45deg, #0056b3 0%, var(--primary-color) 100%); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 110, 255, 0.4); }
+        .btn i { margin-left: 8px; }
+        .btn:disabled { background-image: linear-gradient(45deg, var(--secondary-color) 0%, #868e96 100%); cursor: not-allowed; box-shadow: none; transform: none; }
+        .product-intro { text-align: center; color: var(--secondary-color); font-size: 1.1rem; margin-bottom: 40px; max-width: 750px; margin-left: auto; margin-right: auto; }
+        .tpg-order-area { max-width: 700px; margin: 0 auto 50px auto; background-color: var(--white-color); padding: 30px 40px; border-radius: var(--border-radius); box-shadow: var(--box-shadow-medium); border: 1px solid #eee; }
+        .tpg-order-area h3 { text-align: center; font-size: 1.5rem; margin-bottom: 25px; color: #333; }
+        .tpg-order-area h3 i { color: var(--warning-color); margin-right: 8px; }
+        .tpg-item-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin-bottom: 30px; }
+        .tpg-item input[type="radio"] { appearance: none; -webkit-appearance: none; -moz-appearance: none; position: absolute; opacity: 0; width: 0; height: 0; }
+        .tpg-item label { display: block; border: 2px solid #eee; padding: 12px 8px; border-radius: var(--border-radius); text-align: center; cursor: pointer; transition: border-color var(--transition-speed), background-color var(--transition-speed), transform var(--transition-speed); font-weight: 500; font-size: 0.95rem; }
+        .tpg-item label i { color: var(--warning-color); margin-right: 4px; font-size: 0.85em; }
+        .tpg-item label:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+        .tpg-item input[type="radio"]:checked + label { border-color: var(--primary-color); background-color: #e9f5ff; font-weight: 600; transform: scale(1.03); box-shadow: 0 0 10px rgba(0, 110, 255, 0.1); }
+        .tpg-item input[type="radio"]:focus + label { box-shadow: 0 0 0 0.2rem rgba(0, 110, 255, 0.25); }
+        .tpg-price-display { text-align: center; margin-bottom: 25px; font-size: 1.4rem; font-weight: 700; color: var(--success-color); min-height: 30px; transition: color 0.3s ease; }
+        .tpg-price-display.placeholder { color: var(--secondary-color); font-size: 1.1rem; font-weight: 500; }
+        .tpg-input-group { margin-bottom: 30px; }
+        .tpg-input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--secondary-color); font-size: 0.95rem; text-align: center; }
+        .tpg-input-group input { width: 100%; max-width: 300px; display: block; margin: 0 auto; padding: 12px 15px; border: 1px solid #ced4da; border-radius: var(--border-radius); font-family: var(--body-font); font-size: 1.1rem; transition: border-color var(--transition-speed), box-shadow var(--transition-speed); background-color: #f8f9fa; text-align: center; }
+        .tpg-input-group input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.2rem rgba(0, 110, 255, 0.25); outline: none; background-color: var(--white-color); }
+        .tpg-order-btn { width: 100%; max-width: 350px; display: block; margin: 0 auto; padding: 14px 30px; font-size: 1.1rem; }
+        .tpg-additional-content { margin-top: 60px; }
+        .tpg-additional-content h3 { font-size: 1.6rem; margin-bottom: 25px; color: #333; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .tpg-additional-content h3 i { color: var(--primary-color); margin-right: 8px; }
+        .tpg-additional-content .content-box { background-color: var(--white-color); padding: 30px; border-radius: var(--border-radius); box-shadow: var(--box-shadow-light); margin-bottom: 40px; border: 1px solid #eee; }
+        .tpg-additional-content .content-box p { color: var(--secondary-color); line-height: 1.8; margin-bottom: 1rem; }
+        .tpg-additional-content .content-box ul, .tpg-additional-content .content-box ol { padding-left: 20px; color: var(--secondary-color); margin-bottom: 1rem; }
+        .tpg-additional-content .content-box ul li { list-style: disc; margin-bottom: 0.5rem; }
+        .tpg-additional-content .content-box ol li { list-style: decimal; margin-bottom: 0.75rem; }
+        .tpg-additional-content .content-box ul li i { color: var(--success-color); margin-right: 8px; }
+        .tpg-download-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .tpg-download-links a { display: inline-flex; align-items: center; padding: 10px 20px; border: 1px solid var(--dark-color); border-radius: var(--border-radius); color: var(--dark-color); font-weight: 500; transition: background-color var(--transition-speed), color var(--transition-speed); }
+        .tpg-download-links a:hover { background-color: var(--dark-color); color: var(--white-color); }
+        .tpg-download-links a i { font-size: 1.5rem; margin-right: 10px; }
+        .tpg-tags { text-align: center; margin-top: 15px; }
+        .tpg-tags span { display: inline-block; background-color: var(--light-color); color: var(--secondary-color); padding: 5px 12px; border-radius: 15px; font-size: 0.9rem; margin: 5px; border: 1px solid #eee; }
+        .tpg-other-products .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; }
+        .tpg-other-products .product-link { display: block; background-color: var(--light-color); padding: 20px; border-radius: var(--border-radius); text-align: center; color: var(--dark-color); font-weight: 600; border: 1px solid #eee; transition: transform var(--transition-speed), box-shadow var(--transition-speed); }
+        .tpg-other-products .product-link:hover { color: var(--primary-color); transform: translateY(-5px); box-shadow: var(--box-shadow-light); }
+        .tpg-other-products .product-link i { display: block; font-size: 2.5rem; margin-bottom: 10px; color: var(--primary-color); }
+
+        /* --- Footer Styles --- */
+        #main-footer { background-color: #000000;
+background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); color: rgba(255, 255, 255, 0.8); padding: 60px 0 20px; margin-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .footer-widget h4 { color: var(--white-color); font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; font-weight: 600; }
+        .footer-widget h4::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 40px; background-color: var(--primary-color); }
+        .footer-widget p { font-size: 0.95rem; line-height: 1.8; margin-bottom: 15px; }
+        .footer-widget ul li { margin-bottom: 12px; }
+        .footer-widget ul li a { color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; transition: color var(--transition-speed), padding-left var(--transition-speed); }
+        .footer-widget ul li a:hover { color: var(--white-color); padding-left: 5px; }
+        .footer-widget ul li a i { margin-right: 8px; width: 15px; color: var(--primary-color); }
+        .footer-contact-info i { margin-right: 10px; color: var(--primary-color); width: 20px; text-align: center; }
+        .footer-social-links a { color: rgba(255, 255, 255, 0.8); font-size: 1.4rem; margin-right: 15px; transition: color var(--transition-speed), transform var(--transition-speed); display: inline-block; }
+        .footer-social-links a:hover { color: var(--white-color); transform: scale(1.2); }
+        .footer-social-links a:last-child { margin-right: 0; }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 25px; text-align: center; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+        .footer-bottom a { color: var(--info-color); font-weight: 500; }
+        .footer-bottom a:hover { color: var(--white-color); text-decoration: underline; }
+
+        /* --- Animations --- */
+        @keyframes rotateIcon { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- Responsive Design --- */
+        @media (min-width: 769px) { #main-nav { display: flex; } .menu-toggle { display: none; } }
+        @media (max-width: 992px) { :root { --border-radius: 6px; } .section-title { font-size: 2rem; } .tpg-item-list { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); } .tpg-other-products .products-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); } .footer-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); } }
+        @media (max-width: 768px) { h2 { font-size: 1.8rem; } .section-title { font-size: 1.9rem; margin-bottom: 40px; } section { padding: 50px 0; } #tpg-product-page { padding-top: 30px; } .tpg-order-area { padding: 25px 30px; } .tpg-item-list { grid-template-columns: repeat(3, 1fr); } .tpg-price-display { font-size: 1.3rem; } .tpg-input-group input { font-size: 1rem; } .tpg-order-btn { font-size: 1rem; } .tpg-additional-content h3 { font-size: 1.4rem; } .tpg-other-products .products-grid { grid-template-columns: 1fr 1fr; }
+            /* Mobile Navigation */
+            #main-nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white-color); box-shadow: 0 10px 20px rgba(0,0,0,0.1); flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; }
+            #main-nav.active { display: flex; max-height: 500px; z-index: 999; }
+            #main-nav ul { flex-direction: column; width: 100%; padding: 10px 0; }
+            #main-nav ul li { margin: 0; text-align: left; }
+            #main-nav ul li a { display: block; padding: 15px 25px; border-bottom: 1px solid #eee; }
+            #main-nav ul li:last-child a { border-bottom: none; }
+            #main-nav ul li a::after { display: none; }
+            #main-nav ul li a:hover { background-color: #f8f9fa; color: var(--primary-color); }
+            .menu-toggle { display: block; }
+            /* Footer Mobile */
+            .footer-grid { grid-template-columns: 1fr; gap: 25px; } .footer-widget { text-align: center; } .footer-widget h4::after { left: 50%; transform: translateX(-50%); } .footer-contact-info li { text-align: center; justify-content: center;} .footer-contact-info i { display: inline-block; width: auto; }
+             /* Floating Elements Responsive */
+            .support-widget { bottom: 15px; right: 15px; } .support-main-btn { width: 60px; height: 60px; font-size: 1.7rem; } .support-option { width: 45px; height: 45px; font-size: 1.4rem; } .support-options { bottom: 75px; right: 7.5px; gap: 12px; } .support-option::before { display: none; }
+            .fixed-ad-banner { left: -400px; bottom: 15px; padding: 10px 40px 10px 15px; font-size: 0.85rem; max-width: 280px;} .ad-close-btn { font-size: 1.1rem; top: 4px; right: 4px;}
+        }
+        @media (max-width: 576px) { :root { --border-radius: 4px; } .container { padding: 0 15px; } section { padding: 40px 0; } #tpg-product-page { padding-top: 20px; } .section-title { font-size: 1.7rem; margin-bottom: 30px;} .tpg-order-area { padding: 20px 15px; } .tpg-item-list { grid-template-columns: repeat(2, 1fr); } .tpg-price-display { font-size: 1.2rem; } .tpg-other-products .products-grid { grid-template-columns: 1fr; } .footer-grid { gap: 20px; } .footer-widget h4 { font-size: 1.1rem; } .footer-widget p, .footer-widget ul li a { font-size: 0.9rem; } .footer-bottom { font-size: 0.85rem; }
+             /* Floating Elements Responsive */
+            .support-widget { bottom: 10px; right: 10px; } .support-main-btn { width: 55px; height: 55px; font-size: 1.6rem; } .support-option { width: 40px; height: 40px; font-size: 1.3rem; } .support-options { bottom: 70px; right: 7.5px; gap: 10px; }
+            .fixed-ad-banner { left: -400px; bottom: 10px; max-width: calc(100vw - 20px); border-radius: var(--border-radius); }
+        }
+
+    </style>
+</head>
+<body class="tpg-product-page">
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                     Your TopUp Center
+                </a>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="/">হোম</a></li>
+                    <li><a href="/products">প্রোডাক্টস</a></li>
+                    <li><a href="/offers">অফার</a></li>
+                    <li><a href="/blogs">ব্লগ</a></li>
+                    <li><a href="/about">আমাদের সম্পর্কে</a></li>
+             
+                    <li><a href="/contact">যোগাযোগ</a></li>
+                                     <li><a href="https://utech-llc.github">U Tech</a></li>
+                </ul>
+            </nav>
+             <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Teen Patti Gold Product Section -->
+        <section id="tpg-product-page">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-star"></i> Teen Patti Gold চিপস/কয়েন</h2>
+                <p class="product-intro fade-in">
+                    আপনার Teen Patti Gold গেমে আরও উত্তেজনা যোগ করতে প্রয়োজন চিপস? Player ID দিয়ে নিরাপদে ও দ্রুততম সময়ে চিপস কিনুন। আকর্ষণীয় দামে সেরা ডিল শুধুমাত্র এখানেই।
+                </p>
+
+                <!-- Order Area -->
+                <div class="tpg-order-area fade-in">
+                    <h3><i class="fas fa-coins"></i> চিপস/কয়েন প্যাক নির্বাচন করুন</h3>
+                    <div class="tpg-item-list">
+                        <div class="tpg-item"><input type="radio" id="tpg_item1" name="tpg_item" value="5 Cr Chips" data-price="৯০" data-item-name="৫ কোটি চিপস"><label for="tpg_item1"><i class="fas fa-coins"></i> ৫ Cr</label></div>
+                        <div class="tpg-item"><input type="radio" id="tpg_item2" name="tpg_item" value="10 Cr Chips" data-price="১৭০" data-item-name="১০ কোটি চিপস"><label for="tpg_item2"><i class="fas fa-coins"></i> ১০ Cr</label></div>
+                        <div class="tpg-item"><input type="radio" id="tpg_item3" name="tpg_item" value="20 Cr Chips" data-price="৩৩০" data-item-name="২০ কোটি চিপস"><label for="tpg_item3"><i class="fas fa-coins"></i> ২০ Cr</label></div>
+                        <div class="tpg-item"><input type="radio" id="tpg_item4" name="tpg_item" value="50 Cr Chips" data-price="৮০০" data-item-name="৫০ কোটি চিপস"><label for="tpg_item4"><i class="fas fa-coins"></i> ৫০ Cr</label></div>
+                        <div class="tpg-item"><input type="radio" id="tpg_item5" name="tpg_item" value="100 Cr Chips" data-price="১৫৫০" data-item-name="১০০ কোটি চিপস"><label for="tpg_item5"><i class="fas fa-coins"></i> ১০০ Cr</label></div>
+                        <div class="tpg-item"><input type="radio" id="tpg_item6" name="tpg_item" value="250 Cr Chips" data-price="৩৭৫০" data-item-name="২৫০ কোটি চিপস"><label for="tpg_item6"><i class="fas fa-coins"></i> ২৫০ Cr</label></div>
+                    </div>
+                    <div id="selected-item-price" class="tpg-price-display placeholder">একটি আইটেম নির্বাচন করুন</div>
+                    <div class="tpg-input-group">
+                        <label for="tpg-player-id">আপনার Teen Patti Gold প্লেয়ার আইডি দিন</label>
+                        <input type="number" id="tpg-player-id" name="player_id" placeholder="প্লেয়ার আইডি এখানে লিখুন" required>
+                    </div>
+                    <button id="tpg-order-button" class="btn tpg-order-btn" disabled><i class="fas fa-shopping-cart"></i> এখনই কিনুন</button>
+                </div>
+
+                <!-- Additional Content Sections -->
+                <div class="tpg-additional-content">
+                    <!-- How to Order Section for Teen Patti Gold -->
+<div class="content-box fade-in">
+    <h3><i class="fas fa-question-circle"></i> কিভাবে Teen Patti Gold চিপস/কয়েন কিনবেন?</h3>
+    <ol>
+        <li>
+            <strong>প্যাক নির্বাচন করুন:</strong>
+            উপরে তালিকা থেকে আপনার পছন্দের চিপস বা কয়েনের প্যাক (যেমন: <i class="fas fa-coins"></i> ৫ Cr, <i class="fas fa-coins"></i> ১০ Cr) নির্বাচন করুন। প্রতিটি প্যাকের মূল্য পাশে উল্লেখ করা আছে।
+        </li>
+        <li>
+            <strong>প্লেয়ার আইডি প্রদান করুন:</strong>
+            আপনার Teen Patti Gold গেমের প্রোফাইল বা সেটিংস থেকে আপনার প্লেয়ার আইডিটি খুঁজে বের করে সঠিকভাবে কপি করুন। নিচের 'প্লেয়ার আইডি' বক্সে আইডিটি পেস্ট করুন বা টাইপ করুন।
+            <br>
+            <em style="color: var(--secondary-color); font-size: 0.9em;">(নিশ্চিত করুন এটি সঠিক আইডি)।</em>
+            <br>
+            <strong style="color: var(--danger-color);">সতর্কতা:</strong> ভুল প্লেয়ার আইডি দিলে চিপস ভুল অ্যাকাউন্টে চলে যেতে পারে অথবা অর্ডারটি সম্পন্ন নাও হতে পারে। আইডি দেওয়ার আগে নিশ্চিত হয়ে নিন।
+        </li>
+        <li>
+            <strong>অর্ডার করুন:</strong>
+            সঠিক প্যাক এবং প্লেয়ার আইডি দেওয়ার পর "এখনই কিনুন" বাটনে ক্লিক করুন।
+        </li>
+        <li>
+            <strong>অর্ডার নিশ্চিত করুন:</strong>
+            পরবর্তী পেজে আপনার নির্বাচিত প্যাক, প্লেয়ার আইডি এবং মূল্য দেখানো হবে। সবকিছু ঠিক থাকলে অর্ডারটি নিশ্চিত করে পেমেন্ট ধাপে যান।
+        </li>
+        <li>
+            <strong>পেমেন্ট সম্পন্ন করুন:</strong>
+            আপনার পছন্দের নিরাপদ পেমেন্ট পদ্ধতি (যেমন: বিকাশ, নগদ, রকেট) ব্যবহার করে নির্ধারিত মূল্য পরিশোধ করুন।
+        </li>
+        <li>
+            <strong>ডেলিভারি:</strong>
+            পেমেন্ট সফলভাবে সম্পন্ন এবং যাচাই হওয়ার পর, সাধারণত <strong style="color: var(--info-color);">খুব অল্প সময়ের মধ্যেই</strong> আপনার Teen Patti Gold অ্যাকাউন্টে চিপস/কয়েন যোগ করে দেওয়া হবে।
+        </li>
+        <li>
+            <strong>সহায়তা:</strong>
+            অর্ডার সংক্রান্ত যেকোনো প্রয়োজনে বা ডেলিভারি পেতে দেরি হলে, অনুগ্রহ করে অর্ডার আইডি সহ আমাদের <a href="contact.html">কাস্টমার সাপোর্টে</a> যোগাযোগ করুন।
+        </li>
+    </ol>
+</div>
+
+<!-- About Teen Patti Gold Section -->
+<div class="content-box fade-in">
+    <h3><i class="fas fa-cards-playing"></i> Teen Patti Gold সম্পর্কে</h3>
+    <p>
+        Teen Patti Gold (টিন পট্টি গোল্ড) একটি অত্যন্ত জনপ্রিয় মাল্টিপ্লেয়ার অনলাইন কার্ড গেম, যা ক্লাসিক ভারতীয় কার্ড গেম "টিন পট্টি"-র উপর ভিত্তি করে তৈরি। Moonfrog Labs द्वारा विकसित এই গেমটি বিশেষ করে ভারত এবং বাংলাদেশে লক্ষ লক্ষ খেলোয়াড়ের মধ্যে জনপ্রিয়।
+    </p>
+    <p>
+        খেলোয়াড়রা রিয়েল-টাইমে বন্ধু বা বিশ্বজুড়ে অন্যান্য খেলোয়াড়দের সাথে যুক্ত হতে পারে। গেমটিতে ক্লাসিক টিন পট্টি ছাড়াও বিভিন্ন ভ্যারিয়েশন যেমন জোকার, মুফলিস, AK47, Hukam ইত্যাদি খেলার সুযোগ রয়েছে। এছাড়াও পোকার এবং রামি-র মতো অন্যান্য কার্ড গেমও এতে অন্তর্ভুক্ত থাকতে পারে।
+    </p>
+    <h4>গেমের বৈশিষ্ট্য:</h4>
+    <ul>
+        <li><i class="fas fa-users"></i> মাল্টিপ্লেয়ার অনলাইন গেমপ্লে।</li>
+        <li><i class="fas fa-random"></i> টিন পট্টির বিভিন্ন জনপ্রিয় ভ্যারিয়েশন।</li>
+        <li><i class="fas fa-comments"></i> বন্ধুদের সাথে প্রাইভেট টেবিলে খেলার সুযোগ।</li>
+        <li><i class="fas fa-gift"></i> চ্যাট এবং গিফট পাঠানোর অপশন।</li>
+        <li><i class="fas fa-trophy"></i> টুর্নামেন্ট এবং লিডারবোর্ডে প্রতিযোগিতা করার সুযোগ।</li>
+    </ul>
+    <p>
+        গেমে বাজি ধরা এবং খেলার জন্য চিপস বা কয়েন প্রয়োজন হয়, যা গেম খেলে অর্জন করা যায় অথবা টপ-আপ করে কেনা যায়।
+    </p>
+</div>
+
+<!-- Benefits of Chip Topup Section -->
+<div class="content-box fade-in">
+    <h3><i class="fas fa-coins"></i> চিপস/কয়েন টপ-আপের সুবিধা</h3>
+    <p>
+        Teen Patti Gold গেমে পর্যাপ্ত চিপস বা কয়েন থাকা আপনার গেমিং অভিজ্ঞতাকে আরও উপভোগ্য করে তোলে। চিপস টপ-আপ করার মাধ্যমে আপনি নিম্নলিখিত সুবিধাগুলো পেতে পারেন:
+    </p>
+    <ul>
+        <li>
+            <i class="fas fa-arrow-up"></i>
+            <strong>উচ্চ বাজির টেবিলে অংশগ্রহণ:</strong>
+            বেশি চিপস থাকলে আপনি উচ্চ বাজির (High Stakes) টেবিলে যোগ দিতে পারবেন, যেখানে জেতার পরিমাণও বেশি থাকে।
+        </li>
+        <li>
+            <i class="fas fa-stopwatch"></i>
+            <strong>নিরবচ্ছিন্ন খেলা:</strong>
+            চিপস শেষ হয়ে যাওয়ার দুশ্চিন্তা ছাড়াই দীর্ঘ সময় ধরে খেলা চালিয়ে যেতে পারবেন।
+        </li>
+        <li>
+            <i class="fas fa-trophy"></i>
+            <strong>টুর্নামেন্টে অংশগ্রহণ:</strong>
+            কিছু টুর্নামেন্টে অংশগ্রহণের জন্য নির্দিষ্ট পরিমাণ চিপসের প্রয়োজন হতে পারে। টপ-আপ আপনাকে সেই সুযোগ করে দেয়।
+        </li>
+        <li>
+            <i class="fas fa-star"></i>
+            <strong>ভিআইপি সুবিধা (যদি থাকে):</strong>
+            বেশি চিপস হোল্ডার বা নিয়মিত টপ-আপকারী হিসেবে গেমে বিশেষ ভিআইপি স্ট্যাটাস বা সুবিধা পাওয়ার সুযোগ থাকতে পারে।
+        </li>
+        <li>
+            <i class="fas fa-gift"></i>
+            <strong>বন্ধুদের সাহায্য করা:</strong>
+            গেমে আপনার বন্ধুদের চিপস উপহার দিয়ে তাদের সাহায্য করতে পারবেন।
+        </li>
+        <li>
+            <i class="fas fa-chart-line"></i>
+            <strong>দ্রুত অগ্রগতি:</strong>
+            পর্যাপ্ত চিপস আপনাকে বিভিন্ন কৌশল পরীক্ষা করতে এবং গেমে দ্রুত অভিজ্ঞতা অর্জন করতে সাহায্য করে।
+        </li>
+    </ul>
+</div>
+
+<!-- Download Teen Patti Gold Section -->
+<div class="content-box fade-in">
+    <h3><i class="fas fa-download"></i> Teen Patti Gold ডাউনলোড করুন</h3>
+    <p>জনপ্রিয় এই কার্ড গেমটি খেলতে চাইলে এখনই ডাউনলোড করুন:</p>
+    <div class="tpg-download-links"> <!-- Renamed class -->
+       <a href="https://play.google.com/store/apps/details?id=com.teenpatti.hd.gold" target="_blank" rel="noopener noreferrer">
+           <i class="fab fa-google-play"></i> Google Play Store
+       </a>
+        <a href="https://apps.apple.com/us/app/teen-patti-gold-poker-rummy/id914312106" target="_blank" rel="noopener noreferrer">
+           <i class="fab fa-apple"></i> Apple App Store
+       </a>
+        <!-- Add other relevant download links if necessary -->
+    </div>
+</div>
+
+<!-- Keywords and Tags Section -->
+<div class="content-box fade-in tpg-tags"> <!-- Renamed class -->
+    <h3><i class="fas fa-tags"></i> কীওয়ার্ড ও ট্যাগ</h3>
+    <span>Teen Patti Gold</span>
+    <span>TPG Chips</span>
+    <span>টিন পট্টি গোল্ড</span>
+    <span>টিপিজি চিপস</span>
+    <span>Buy Chips BD</span>
+    <span>TPG Coins</span>
+     <span>Online Card Game</span>
+     <span>Player ID Top Up</span>
+     <span>Moonfrog Labs</span>
+     <span>Teen Patti Bangladesh</span>
+     <span>TPG টপ আপ</span>
+     <span>কার্ড গেম</span>
+     <span>Buy TPG Coins</span>
+</div>
+
+<!-- Other Products Section -->
+<div class="content-box fade-in tpg-other-products"> <!-- Renamed class -->
+   <h3><i class="fas fa-ellipsis-h"></i> অন্যান্য প্রোডাক্ট ও সার্ভিস</h3>
+   <div class="products-grid">
+       <a href="freefire.html" class="product-link">
+           <i class="fas fa-fire"></i>
+           <span>ফ্রি ফায়ার ডায়মন্ড</span>
+      </a>
+       <a href="pubg.html" class="product-link">
+           <i class="fas fa-parachute-box"></i>
+           <span>পাবজি মোবাইল ইউসি</span>
+      </a>
+       <a href="coc.html" class="product-link">
+           <i class="fas fa-gem"></i>
+           <span>Clash of Clans জেমস</span>
+      </a>
+      <a href="youtubepremium.html" class="product-link">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube Premium</span>
+       </a>
+    
+       <a href="products.html" class="product-link">
+            <i class="fas fa-shopping-bag"></i>
+           <span>সকল প্রোডাক্ট</span>
+       </a>
+   </div>
+</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+ <footer id="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4><i class="fas fa-info-circle"></i> Your TopUp Center</h4>
+                    <p>আপনার বিশ্বস্ত ডিজিটাল সেবার ঠিকানা। মোবাইল রিচার্জ, গেম টপ-আপ, বিল পেমেন্ট সহ আরো অনেক সেবা নিন সহজে ও নিরাপদে।</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/yourtopupcenterofficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@techwithahofficial?si=S317t17KNYjqGcKl" target="_blank" rel="noopener noreferrer" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/yourtopupcenterofficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/yourtopupcenter" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://t.me/YTC24_bot" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-widget">
+                    <h4><i class="fas fa-link"></i> প্রয়োজনীয় লিংক</h4>
+                    <ul>
+                        <li><a href="/home"><i class="fas fa-angle-right"></i> Home</a></li>
+                        
+                        <li><a href="/products"><i class="fas fa-angle-right"></i> Products</a></li>
+       <li><a href="/offers"><i class="fas fa-angle-right"></i> Offer</a></li>
+                        <li><a href="/blogs"><i class="fas fa-angle-right"></i> Blogs</a></li>
+                        <li><a href="/resller"><i class="fas fa-angle-right"></i> Reseller Platfrom</a></li>
+                        <li><a href="/about"><i class="fas fa-angle-right"></i> About</a></li>
+                         <li><a href="/contact"><i class="fas fa-angle-right"></i> Contact</a></li>
+                          <li><a href="/terms"><i class="fas fa-angle-right"></i> Tarms and Conditions</a></li>
+                           <li><a href="/privacy"><i class="fas fa-angle-right"></i> Privacy and Policies</a></li>
+                           
+                                     <li><a href="/menu"><i class="fas fa-angle-right"></i> Menu</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget" id="footer-contact">
+                    <h4><i class="fas fa-address-book"></i> যোগাযোগ</h4>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> শ্রীবরদী, শেরপুর, ময়মনসিংহ, বাংলাদেশ</li>
+                        <li><a href="tel:+8801781146747"><i class="fas fa-phone-alt"></i> +880 1781-146747</a></li>
+                        <li><a href="mailto:ffdiamondstorebd@gmail.com"><i class="fas fa-envelope"></i> ffdiamondstorebd@gmail.com</a></li>
+                        <li><i class="fab fa-facebook-messenger"></i><a href="https://m.me/yourtopupcenterofficial"></a>Messenger Chat</li>
+                        <li><i class="fab fa-whatsapp"></i><a href="https://w.me/+8801781146747">WhatsApp</a></li>
+                          <li><i class="fab fa-telegram"></i><a href="https://t.me/YTC24_bot">Telegram</a></li>
+                         <li><i class="fas fa-clock"></i> সাপোর্ট: ২৪/৭ খোলা</li>
+                    </ul>
+                </div>
+
+                 <div class="footer-widget">
+                    <h4><i class="fas fa-envelope-open-text"></i> নিউজলেটার</h4>
+                    <p>সর্বশেষ অফার এবং আপডেটের জন্য সাইন আপ করুন।</p>
+                    <form id="newsletter-form" style="display: flex;">
+                         <input type="email" placeholder="আপনার ইমেইল" required style="flex-grow: 1; padding: 10px; border: none; border-radius: 4px 0 0 4px; font-family: var(--body-font);">
+                         <button type="submit" class="btn" style="border-radius: 0 4px 4px 0; padding: 10px 15px; font-size: 1rem; box-shadow: none;"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                 </div>
+            </div>
+
+            <div class="footer-bottom">
+                কপিরাইট © <span id="current-year"></span> Your TopUp Center. সর্বস্বত্ব সংরক্ষিত। একটি  U Tech এর প্ল্যাটফ্রম! ভার্সন : 10.1<br>
+                ডেভেলপড উইথ <i class="fas fa-heart" style="color: #e74c3c;"></i> বাই <a href="https://utech-llc.github.io/webux" target="_blank" rel="noopener noreferrer">WebUX Solution</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Support Widget -->
+    <div class="support-widget">
+        <div class="support-options" id="support-options">
+            <!-- Added data-tooltip -->
+            <a href="https://wa.me/+8801781146747" target="_blank" rel="noopener noreferrer" class="support-option whatsapp" aria-label="WhatsApp" data-tooltip="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://m.me/yourtopupcenterofficial" target="_blank" rel="noopener noreferrer" class="support-option messenger" aria-label="Messenger" data-tooltip="Messenger">
+                <i class="fab fa-facebook-messenger"></i>
+            </a>
+             <a href="https://t.me/YTC24_bot" target="_blank" rel="noopener noreferrer" class="support-option telegram" aria-label="Telegram" data-tooltip="Telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+             <a href="tel:01781146747" class="support-option call" aria-label="Call" data-tooltip="কল করুন">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+        </div>
+        <button class="support-main-btn" id="support-main-btn" aria-label="Support Options">
+             <i class="fas fa-headset"></i> <!-- Default icon -->
+             <i class="fas fa-times"></i> <!-- Icon shown when active -->
+        </button>
+    </div>
+
+    <!-- Fixed Ad Banner -->
+    <div class="fixed-ad-banner" id="fixed-ad-banner">
+        <div class="ad-content">
+            <i class="fab fa-facebook-f"></i> <!-- Ad icon -->
+            <span>Latest সব আপডেট পেতে এখুনি আমাদের <a href="https://www.faebook.com/yourtopupcenterofficial">ফেসবুক পেজ</a> ভিজিট করুন!  </span>
+        </div>
+        <button class="ad-close-btn" id="ad-close-btn" aria-label="Close Ad">
+            ×
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function setCookie(name, value, days) { let expires = ""; if (days !== 0) { const date = new Date(); if (days === -1) { expires = "; expires=Thu, 01 Jan 1970 00:00:00 GMT"; } else { date.setTime(date.getTime() + (60 * 60 * 1000)); expires = "; expires=" + date.toUTCString(); } } document.cookie = name + "=" + (encodeURIComponent(value) || "")  + expires + "; path=/"; }
+
+            // --- Standard Setup ---
+             const menuToggle = document.getElementById('menu-toggle');
+             const mainNav = document.getElementById('main-nav');
+              if (menuToggle && mainNav) {
+                 menuToggle.addEventListener('click', () => { mainNav.classList.toggle('active'); const icon = menuToggle.querySelector('i'); if (icon) {icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-times');} });
+                 mainNav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { if (mainNav.classList.contains('active')) { mainNav.classList.remove('active'); const icon = menuToggle.querySelector('i'); if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }} }); });
+                 document.addEventListener('click', (event) => { if (mainNav.classList.contains('active') && !mainNav.contains(event.target) && !menuToggle.contains(event.target)) { mainNav.classList.remove('active'); const icon = menuToggle.querySelector('i'); if (icon) { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }} });
+             } else { console.warn("Menu toggle or nav not found") }
+             const body = document.body;
+             const header = document.getElementById('main-header');
+              if (header) { const scrollThreshold = 50; window.addEventListener('scroll', () => { if (window.scrollY > scrollThreshold) { body.classList.add('scrolled'); } else { body.classList.remove('scrolled'); } }); }
+             const fadeElements = document.querySelectorAll('.fade-in');
+             if ("IntersectionObserver" in window && fadeElements.length > 0) { const observerOptions = { threshold: 0.1 }; const observer = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, observerOptions); fadeElements.forEach(el => observer.observe(el)); } else { fadeElements.forEach(el => el.classList.add('visible')); }
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+              const newsletterForm = document.getElementById('newsletter-form');
+              if(newsletterForm) { newsletterForm.addEventListener('submit', (e) => { e.preventDefault(); alert('ধন্যবাদ! আপনার ইমেইল সাবস্ক্রাইব করা হয়েছে (Placeholder)।'); newsletterForm.reset(); }); }
+
+            // --- TPG Order Logic ---
+             const tpgItemList = document.querySelector('.tpg-item-list');
+             const priceDisplay = document.getElementById('selected-item-price');
+             const playerIdInput = document.getElementById('tpg-player-id');
+             const orderButton = document.getElementById('tpg-order-button');
+             let selectedItemName = null;
+             let selectedItemPrice = null;
+
+             if (tpgItemList && priceDisplay && playerIdInput && orderButton) {
+                  const checkOrderButtonState = () => {
+                     const selectedRadio = document.querySelector('input[name="tpg_item"]:checked');
+                     const playerIdValue = playerIdInput.value.trim();
+                     // Basic validation: Check if ID is not empty (add more specific checks if needed)
+                     const isIdValid = playerIdValue !== '';
+                     orderButton.disabled = !selectedRadio || !isIdValid;
+                 };
+
+                 tpgItemList.addEventListener('change', function(event) {
+                     if (event.target.type === 'radio' && event.target.name === 'tpg_item') {
+                         selectedItemPrice = event.target.dataset.price;
+                         selectedItemName = event.target.dataset.itemName;
+                         priceDisplay.textContent = `মূল্য: ৳ ${selectedItemPrice}`;
+                         priceDisplay.classList.remove('placeholder');
+                         checkOrderButtonState();
+                     }
+                 });
+
+                 playerIdInput.addEventListener('input', checkOrderButtonState);
+
+                 orderButton.addEventListener('click', function() {
+                     const playerId = playerIdInput.value.trim();
+                     if (!selectedItemName) { alert('অনুগ্রহ করে একটি চিপস প্যাক নির্বাচন করুন।'); return; }
+                     if (!playerId) { alert('অনুগ্রহ করে একটি সঠিক প্লেয়ার আইডি দিন।'); playerIdInput.focus(); return; }
+                      // Add more specific validation for TPG ID if needed
+                     // if (!/^\d{8,}$/.test(playerId)) { alert('Please enter a valid Player ID.'); return; }
+
+                     const orderData = { productName: "Teen Patti Gold Chips", itemName: selectedItemName, price: selectedItemPrice, uid: playerId };
+                     const cookieValue = JSON.stringify(orderData);
+                     setCookie('orderDetails', cookieValue, null);
+                     console.log('Setting cookie for TPG and redirecting...');
+                     window.location.href = 'checkout.html';
+                 });
+                 checkOrderButtonState(); // Initial check
+             } else { console.error("Teen Patti Gold order area elements not found!"); }
+
+            // --- Floating Elements Logic ---
+             const supportMainBtn = document.getElementById('support-main-btn');
+             const supportOptions = document.getElementById('support-options');
+             if (supportMainBtn && supportOptions) {
+                 supportMainBtn.addEventListener('click', (e) => { e.stopPropagation(); supportMainBtn.classList.toggle('active'); supportOptions.classList.toggle('active'); });
+                 document.addEventListener('click', (event) => { if (supportOptions.classList.contains('active') && !supportMainBtn.contains(event.target) && !supportOptions.contains(event.target)) { supportMainBtn.classList.remove('active'); supportOptions.classList.remove('active'); } });
+             } else { console.error("Support button or options element not found!"); }
+
+             const adBanner = document.getElementById('fixed-ad-banner');
+             const adCloseBtn = document.getElementById('ad-close-btn');
+             if (adBanner && adCloseBtn) {
+                 adCloseBtn.addEventListener('click', () => { adBanner.classList.add('hidden'); try { sessionStorage.setItem('adBannerClosed', 'true'); } catch (e) { console.warn("Could not set sessionStorage for ad banner."); } });
+                 try { if (sessionStorage.getItem('adBannerClosed') === 'true') { adBanner.style.display = 'none'; } } catch (e) { console.warn("Could not access sessionStorage for ad banner."); }
+             } else { console.error("Ad banner or close button element not found!"); }
+
+        }); // End DOMContentLoaded
+    </script>
+
+</body>
+</html>
